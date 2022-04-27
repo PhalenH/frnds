@@ -1,2 +1,0 @@
-# frnds
-frnds website
