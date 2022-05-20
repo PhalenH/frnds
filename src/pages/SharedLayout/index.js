@@ -1,8 +1,14 @@
-import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function index() {
   return (
-    <div>index</div>
-  )
+    <>
+      <Header />
+      <Outlet />
+      <Footer />
+    </>
+  );
 }
