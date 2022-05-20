@@ -1,8 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./header.css"
 
 export default function Header() {
   return (
+    <div className="header-wrapper">
     <div className="navbar">
       <NavLink
         to="/"
@@ -16,18 +18,8 @@ export default function Header() {
       >
         Profile
       </NavLink>
-      {/* <NavLink
-        to="/products"
-        // className={({ isActive }) => (isActive ? "link active" : "link")}
-      >
-        Products
-      </NavLink>
-      <NavLink
-        to="/login"
-        // className={({ isActive }) => (isActive ? "link active" : "link")}
-      >
-        Login
-      </NavLink> */}
+    </div>
+    <header>FRNDS</header>
     </div>
   );
 }
