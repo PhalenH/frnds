@@ -19,6 +19,8 @@ export default function Header() {
         >
           Profile
         </NavLink>
+        <NavLink to="/login">Login</NavLink>
+        <NavLink to="/logout">Logout</NavLink>
       </div>
     </div>
   );
