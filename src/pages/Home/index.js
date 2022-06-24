@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Posts } from "../Posts";
+import { Posts } from "../../components/Posts";
+import { Pagination } from "../../components/Pagination";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -19,12 +20,16 @@ export default function Home() {
     fetchPosts();
   }, []);
 
-  console.log(posts);
+  // get current post
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPost = posts.slice(indexOfFirstPost, indexOfLastPost)
 
   return (
     <div className="container mt-5">
       <h1 className="text-white mb-3">Testing Pagination</h1>
-      <Posts posts={posts} loading={loading} />
+      <Posts posts={currentPost} loading={loading} />
+      <Pagination postsPerPage={postsPerPage} totalPost={posts.length} />
     </div>
   );
 }
