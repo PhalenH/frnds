@@ -25,11 +25,13 @@ export default function Home() {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPost = posts.slice(indexOfFirstPost, indexOfLastPost)
 
+  const paginate = (pageNumber) => setcurrentPage(pageNumber)
+
   return (
     <div className="container mt-5">
       <h1 className="text-white mb-3">Testing Pagination</h1>
       <Posts posts={currentPost} loading={loading} />
-      <Pagination postsPerPage={postsPerPage} totalPost={posts.length} />
+      <Pagination postsPerPage={postsPerPage} totalPost={posts.length} paginate={paginate} />
     </div>
   );
 }
